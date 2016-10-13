@@ -29,6 +29,8 @@ module Jekyll
 
     def _data_menus
       out = {}
+      
+      return out unless @site.data["menus"]
 
       @site.data["menus"].each do |key, menu|
         if menu.is_a?(Hash) || menu.is_a?(Array)
